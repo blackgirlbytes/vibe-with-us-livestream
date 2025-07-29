@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#game-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#target-text {
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+}
+
+#input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#regex-input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+#feedback {
+    text-align: center;
+    min-height: 24px;
+}
+
+.correct {
+    color: #2ecc71;
+}
+
+.incorrect {
+    color: #e74c3c;
+}
+
+#help-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+#help-section a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#help-section a:hover {
+    text-decoration: underline;
+}

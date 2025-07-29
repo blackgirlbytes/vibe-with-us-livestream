@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Racer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-header">
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="timer">Time: <span id="timer-value">30</span>s</div>
+        </div>
+        
+        <div id="game-content">
+            <div id="target-text">Match this: <span id="current-text">hello</span></div>
+            <div id="input-area">
+                <input type="text" id="regex-input" placeholder="Type regex pattern here..." />
+                <div id="feedback"></div>
+            </div>
+        </div>
+        
+        <div id="help-section">
+            <p>💡 <a href="CHEATSHEET.md" target="_blank">View Regex Cheat Sheet</a></p>
+            <p>Note: You must use proper regex patterns - typing the exact text won't work!</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
