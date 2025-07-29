@@ -1,0 +1,63 @@
+# 🎮 VIBE WITH US - Project Context
+
+## Project Overview
+This is "Vibe With Us: Progressive Web Game Adventure" - a mind-bending progressive web game where each level is a completely different game genre, creating an epic journey through gaming history and mechanics.
+
+## Core Concept
+- **7 Progressive Levels**: Each level is a different game genre with increasing difficulty
+- **Retro-Future Aesthetic**: Neon cyberpunk meets classic arcade vibes
+- **Seamless Transitions**: Epic animations between games
+- **Achievement System**: Badges, points, and progress tracking
+- **PWA Architecture**: Works offline, installable, responsive
+
+## Game Progression
+1. **Level 1**: Regex Typing Puzzle (Data Detective theme)
+2. **Level 2**: Tetris Reimagined (with power-ups and neon effects)
+3. **Level 3**: Snake Evolution (snake evolves as it grows)
+4. **Level 4**: Pong Multiplayer Madness (with paddle abilities)
+5. **Level 5**: Breakout Dimension Shift (3D layers, reality glitches)
+6. **Level 6**: Space Invaders Remix (bullet hell + strategy)
+7. **Level 7**: Genre Fusion Final Boss (combines all previous games)
+
+## Technical Architecture
+- **Modular Design**: Each game is a separate module
+- **Central Game Manager**: Core orchestration system (`game-manager.js`)
+- **Local Storage**: Progress tracking and save/load functionality
+- **60fps Performance**: Smooth animations and responsive controls
+- **Mobile-First**: Touch controls and responsive design
+
+## Visual Design
+- **Colors**: Electric Blue (#00FFFF), Neon Pink (#FF00FF), Deep Purple (#4B0082)
+- **Style**: Cyberpunk/futuristic with particle effects and glowing elements
+- **Animations**: Smooth transitions, glitch effects, particle systems
+
+## File Structure
+```
+/
+├── index.html
+├── styles/ (main.css, games/, animations.css)
+├── scripts/ (game-manager.js, utils.js, storage.js, games/)
+├── assets/ (images/, sounds/, fonts/)
+└── data/ (levels.json)
+```
+
+## Current Phase
+Check PROJECT_PLAN.md for detailed phase breakdown. Implementation follows 7 phases from Foundation & Architecture through each game level.
+
+## Development Notes
+- Focus on 60fps performance
+- Each game should feel unique and polished
+- Implement smooth transitions between games
+- Progressive difficulty that builds on previous skills
+- Modern web technologies (ES6+, CSS Grid/Flexbox, Web APIs)
+
+## Key Features to Remember
+- Real-time regex validation with visual feedback
+- Tetris with hold piece, ghost preview, and power-ups
+- Snake evolution system with different stages
+- Pong with AI that adapts to player patterns
+- Breakout with multi-dimensional blocks
+- Space Invaders with upgrade system and boss battles
+- Final level that combines mechanics from all previous games
+
+This is a creative, ambitious project that celebrates gaming history while pushing web game boundaries.

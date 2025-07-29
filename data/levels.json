@@ -1,0 +1,118 @@
+[
+  {
+    "id": "regex",
+    "name": "Regex Detective",
+    "description": "Master the art of pattern matching to solve cyber mysteries",
+    "level": 1,
+    "color": "#00FFFF",
+    "icon": "🔍",
+    "unlockRequirement": "none",
+    "challenges": [
+      {
+        "id": "email_basic",
+        "title": "Email Validation",
+        "description": "Match valid email addresses",
+        "difficulty": "easy",
+        "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "testStrings": [
+          { "text": "user@example.com", "shouldMatch": true },
+          { "text": "invalid.email", "shouldMatch": false },
+          { "text": "test@domain.org", "shouldMatch": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tetris",
+    "name": "Neon Tetris",
+    "description": "Classic block-stacking with cyberpunk aesthetics",
+    "level": 2,
+    "color": "#FF00FF",
+    "icon": "🧱",
+    "unlockRequirement": "regex_completed",
+    "settings": {
+      "gridWidth": 10,
+      "gridHeight": 20,
+      "startingSpeed": 1000,
+      "speedIncrease": 50,
+      "linesPerLevel": 10
+    }
+  },
+  {
+    "id": "snake",
+    "name": "Snake Evolution",
+    "description": "Evolve from a simple worm to a cosmic serpent",
+    "level": 3,
+    "color": "#32CD32",
+    "icon": "🐍",
+    "unlockRequirement": "tetris_completed",
+    "evolutionStages": [
+      { "name": "Worm", "length": 3, "color": "#8B4513" },
+      { "name": "Snake", "length": 10, "color": "#32CD32" },
+      { "name": "Python", "length": 20, "color": "#FFD700" },
+      { "name": "Dragon", "length": 35, "color": "#FF4500" },
+      { "name": "Cosmic Serpent", "length": 50, "color": "#9400D3" }
+    ]
+  },
+  {
+    "id": "pong",
+    "name": "Pong Dimension",
+    "description": "Reality-bending paddle battles with AI opponents",
+    "level": 4,
+    "color": "#FFD700",
+    "icon": "🏓",
+    "unlockRequirement": "snake_completed",
+    "powerUps": [
+      { "name": "Magnetic Paddle", "effect": "attracts_ball", "duration": 5000 },
+      { "name": "Giant Paddle", "effect": "increase_size", "duration": 8000 },
+      { "name": "Laser Paddle", "effect": "shoot_laser", "duration": 10000 }
+    ]
+  },
+  {
+    "id": "breakout",
+    "name": "Breakout Dimension Shift",
+    "description": "Break through barriers across multiple dimensions",
+    "level": 5,
+    "color": "#FF6B6B",
+    "icon": "🎯",
+    "unlockRequirement": "pong_completed",
+    "blockTypes": [
+      { "name": "Standard", "hits": 1, "points": 10, "color": "#FF6B6B" },
+      { "name": "Armored", "hits": 3, "points": 30, "color": "#4ECDC4" },
+      { "name": "Explosive", "hits": 1, "points": 50, "color": "#FFD93D" },
+      { "name": "Portal", "hits": 1, "points": 25, "color": "#9B59B6" }
+    ]
+  },
+  {
+    "id": "invaders",
+    "name": "Space Invaders Remix",
+    "description": "Defend Earth against waves of alien invaders",
+    "level": 6,
+    "color": "#4ECDC4",
+    "icon": "🚀",
+    "unlockRequirement": "breakout_completed",
+    "alienTypes": [
+      { "name": "Scout", "points": 10, "speed": 1, "health": 1 },
+      { "name": "Fighter", "points": 20, "speed": 1.5, "health": 2 },
+      { "name": "Bomber", "points": 30, "speed": 0.8, "health": 3 },
+      { "name": "Mothership", "points": 100, "speed": 0.5, "health": 10 }
+    ]
+  },
+  {
+    "id": "final",
+    "name": "The Final Fusion",
+    "description": "All games merge into one ultimate challenge",
+    "level": 7,
+    "color": "#9B59B6",
+    "icon": "👑",
+    "unlockRequirement": "invaders_completed",
+    "phases": [
+      { "name": "Regex Chaos", "duration": 30, "description": "Control game elements with regex" },
+      { "name": "Tetris Storm", "duration": 45, "description": "Falling blocks while dodging enemies" },
+      { "name": "Snake Maze", "duration": 60, "description": "Navigate as a snake through obstacles" },
+      { "name": "Pong Defense", "duration": 30, "description": "Deflect attacks while managing paddles" },
+      { "name": "Breakout Reality", "duration": 45, "description": "Break reality itself" },
+      { "name": "Final Stand", "duration": 120, "description": "Survive the ultimate test" }
+    ]
+  }
+]

@@ -3,45 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World - Vibe With Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .emoji {
-            font-size: 2rem;
-            margin: 0 0.5rem;
-        }
-    </style>
+    <title>Vibe With Us - Progressive Game Adventure</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World! <span class="emoji">👋</span></h1>
-        <p>Welcome to Vibe With Us Livestream!</p>
-        <p><span class="emoji">🎉</span> Let's vibe together! <span class="emoji">🎉</span></p>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="neon-logo">
+                <h1 class="glitch" data-text="VIBE WITH US">VIBE WITH US</h1>
+                <p class="subtitle">Progressive Game Adventure</p>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
+            </div>
+            <p class="loading-text" id="loading-text">Initializing Game Engine...</p>
+        </div>
+        <div class="cyber-grid"></div>
     </div>
+
+    <!-- Main Menu -->
+    <div id="main-menu" class="screen hidden">
+        <div class="menu-container">
+            <div class="title-section">
+                <h1 class="main-title neon-text">VIBE WITH US</h1>
+                <p class="tagline">Seven Games. One Epic Journey.</p>
+            </div>
+            
+            <div class="menu-buttons">
+                <button class="menu-btn primary" id="start-game">
+                    <span class="btn-text">START ADVENTURE</span>
+                    <span class="btn-glow"></span>
+                </button>
+                <button class="menu-btn secondary" id="level-select">
+                    <span class="btn-text">LEVEL SELECT</span>
+                    <span class="btn-glow"></span>
+                </button>
+                <button class="menu-btn secondary" id="achievements">
+                    <span class="btn-text">ACHIEVEMENTS</span>
+                    <span class="btn-glow"></span>
+                </button>
+                <button class="menu-btn secondary" id="settings">
+                    <span class="btn-text">SETTINGS</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+
+            <div class="progress-indicator">
+                <div class="progress-stats">
+                    <span>Progress: <span id="overall-progress">0%</span></span>
+                    <span>Best Score: <span id="best-score">0</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="particles" id="menu-particles"></div>
+    </div>
+
+    <!-- Level Select Screen -->
+    <div id="level-select-screen" class="screen hidden">
+        <div class="level-select-container">
+            <h2 class="screen-title">CHOOSE YOUR CHALLENGE</h2>
+            <button class="back-btn" id="back-to-menu">← BACK</button>
+            
+            <div class="levels-grid" id="levels-grid">
+                <!-- Levels will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <div class="game-info">
+                <h3 id="current-game-title">Game Title</h3>
+                <div class="game-stats">
+                    <span>Level: <span id="current-level">1</span></span>
+                    <span>Score: <span id="current-score">0</span></span>
+                    <span>Lives: <span id="current-lives">3</span></span>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button class="control-btn" id="pause-game">⏸</button>
+                <button class="control-btn" id="quit-game">✕</button>
+            </div>
+        </div>
+        
+        <div class="game-container" id="game-container">
+            <!-- Individual games will be loaded here -->
+        </div>
+        
+        <div class="game-ui" id="game-ui">
+            <!-- Game-specific UI elements -->
+        </div>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pause-menu" class="modal hidden">
+        <div class="modal-content">
+            <h3>GAME PAUSED</h3>
+            <div class="modal-buttons">
+                <button class="menu-btn primary" id="resume-game">RESUME</button>
+                <button class="menu-btn secondary" id="restart-level">RESTART LEVEL</button>
+                <button class="menu-btn secondary" id="back-to-main">MAIN MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Notification -->
+    <div id="achievement-notification" class="achievement-popup hidden">
+        <div class="achievement-content">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-text">
+                <h4 id="achievement-title">Achievement Unlocked!</h4>
+                <p id="achievement-description">Description here</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transition Screen -->
+    <div id="transition-screen" class="transition-overlay hidden">
+        <div class="transition-content">
+            <h2 id="transition-title">LEVEL COMPLETE!</h2>
+            <p id="transition-message">Preparing next challenge...</p>
+            <div class="transition-progress">
+                <div class="transition-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/game-manager.js"></script>
+    <script>
+        // Initialize the game when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            GameManager.init();
+        });
+    </script>
 </body>
 </html>

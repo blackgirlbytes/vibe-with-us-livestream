@@ -1,0 +1,214 @@
+/* ===== GAME-SPECIFIC STYLES ===== */
+
+/* Regex Game Styles */
+.regex-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #001122 100%);
+  color: var(--neon-cyan);
+}
+
+.regex-input {
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid var(--neon-cyan);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  width: 100%;
+  margin: var(--spacing-md) 0;
+}
+
+.regex-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-neon) var(--neon-cyan);
+}
+
+/* Tetris Game Styles */
+.tetris-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #220022 100%);
+  color: var(--neon-pink);
+}
+
+.tetris-grid {
+  border: 2px solid var(--neon-pink);
+  background: rgba(255, 0, 255, 0.05);
+}
+
+.tetris-block {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* Snake Game Styles */
+.snake-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #002200 100%);
+  color: var(--neon-green);
+}
+
+.snake-segment {
+  border-radius: 50%;
+  box-shadow: var(--shadow-neon) var(--neon-green);
+  transition: all 0.1s ease;
+}
+
+.snake-food {
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Pong Game Styles */
+.pong-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #222200 100%);
+  color: var(--gold);
+}
+
+.pong-paddle {
+  background: var(--gold);
+  box-shadow: var(--shadow-neon) var(--gold);
+  border-radius: var(--radius-sm);
+}
+
+.pong-ball {
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: var(--shadow-glow) var(--gold);
+}
+
+/* Breakout Game Styles */
+.breakout-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #220011 100%);
+  color: #FF6B6B;
+}
+
+.breakout-brick {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+/* Space Invaders Game Styles */
+.invaders-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #001122 100%);
+  color: #4ECDC4;
+}
+
+.invader-sprite {
+  filter: drop-shadow(0 0 5px #4ECDC4);
+}
+
+.player-ship {
+  filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+/* Final Game Styles */
+.final-game {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0033 100%);
+  color: #9B59B6;
+  animation: hologram 3s ease-in-out infinite;
+}
+
+/* Game Canvas Styles */
+.game-canvas {
+  border: 2px solid currentColor;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Game UI Elements */
+.game-hud {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  backdrop-filter: blur(10px);
+}
+
+.game-timer {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--neon-cyan);
+  text-shadow: var(--shadow-neon) var(--neon-cyan);
+}
+
+.game-instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+}
+
+/* Power-up Effects */
+.powerup-active {
+  animation: neonPulse 0.5s ease-in-out infinite;
+}
+
+.powerup-pickup {
+  animation: scaleIn 0.3s ease-out, rotate 2s linear infinite;
+}
+
+/* Game Over Overlay */
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.game-over-title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: var(--neon-pink);
+  text-shadow: var(--shadow-glow) var(--neon-pink);
+  margin-bottom: var(--spacing-lg);
+  animation: glitch 1s ease-in-out infinite;
+}
+
+.final-score {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Responsive Game Styles */
+@media (max-width: 768px) {
+  .game-canvas {
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+  
+  .game-hud {
+    position: static;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .game-instructions {
+    position: static;
+    transform: none;
+    margin-top: var(--spacing-md);
+  }
+  
+  .game-over-title {
+    font-size: 2.5rem;
+  }
+}
