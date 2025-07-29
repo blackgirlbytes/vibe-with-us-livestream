@@ -1,517 +1,182 @@
-/* ===== KEYFRAME ANIMATIONS ===== */
+/* VIBE WITH US - Animations */
 
-/* Glitch Effects */
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #FF00FF;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00FFFF;
+    z-index: -2;
+}
+
 @keyframes glitch {
-  0%, 100% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
 }
 
 @keyframes glitch-1 {
-  0%, 100% {
-    transform: translate(0);
-    opacity: 1;
-  }
-  10% {
-    transform: translate(-2px, -2px);
-    opacity: 0.8;
-  }
-  20% {
-    transform: translate(2px, 2px);
-    opacity: 0.8;
-  }
-  30% {
-    transform: translate(-2px, 2px);
-    opacity: 0.8;
-  }
-  40% {
-    transform: translate(2px, -2px);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(0);
-    opacity: 1;
-  }
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(-2px, -2px); }
+    20% { transform: translate(2px, 2px); }
+    30% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    70% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    90% { transform: translate(-2px, -2px); }
 }
 
 @keyframes glitch-2 {
-  0%, 100% {
-    transform: translate(0);
-    opacity: 1;
-  }
-  15% {
-    transform: translate(2px, 2px);
-    opacity: 0.7;
-  }
-  25% {
-    transform: translate(-2px, -2px);
-    opacity: 0.7;
-  }
-  35% {
-    transform: translate(2px, -2px);
-    opacity: 0.7;
-  }
-  45% {
-    transform: translate(-2px, 2px);
-    opacity: 0.7;
-  }
-  55% {
-    transform: translate(0);
-    opacity: 1;
-  }
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(2px, 2px); }
+    20% { transform: translate(-2px, -2px); }
+    30% { transform: translate(2px, -2px); }
+    40% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    70% { transform: translate(2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+    90% { transform: translate(2px, 2px); }
 }
 
-/* Progress Bar Animation */
-@keyframes progressBar {
-  0% {
-    width: 0%;
-    transform: scaleX(0);
-  }
-  50% {
-    transform: scaleX(1);
-  }
-  100% {
-    width: 100%;
-    transform: scaleX(1);
-  }
+/* Fade Transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
 }
 
-/* Slide Animations */
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.fade-out {
+    animation: fadeOut 0.5s ease-out;
 }
 
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Fade Animations */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Scale Animations */
-@keyframes scaleIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes scaleOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 /* Pulse Animation */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Neon Glow Animation */
+.neon-glow {
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 
+            0 0 5px #00FFFF,
+            0 0 10px #00FFFF,
+            0 0 20px #00FFFF,
+            0 0 40px #00FFFF;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #00FFFF,
+            0 0 20px #00FFFF,
+            0 0 30px #00FFFF,
+            0 0 60px #00FFFF;
+    }
+}
+
+/* Slide Animations */
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.5s ease-in;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.5s ease-in;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+/* Scale Animations */
+.scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+.scale-out {
+    animation: scaleOut 0.3s ease-in;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes scaleOut {
+    from { transform: scale(1); }
+    to { transform: scale(0); }
 }
 
 /* Bounce Animation */
+.bounce {
+    animation: bounce 1s ease-in-out infinite;
+}
+
 @keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -30px, 0);
-  }
-  70% {
-    transform: translate3d(0, -15px, 0);
-  }
-  90% {
-    transform: translate3d(0, -4px, 0);
-  }
-}
-
-/* Shake Animation */
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px);
-  }
-}
-
-/* Rotate Animation */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Neon Glow Pulse */
-@keyframes neonPulse {
-  0%, 100% {
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 20px currentColor;
-  }
-  50% {
-    text-shadow: 
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 40px currentColor,
-      0 0 60px currentColor;
-  }
-}
-
-/* Matrix Rain Effect */
-@keyframes matrixRain {
-  0% {
-    transform: translateY(-100vh);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
-/* Cyber Grid Animation */
-@keyframes cyberGrid {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
-}
-
-/* Particle Float */
-@keyframes particleFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 1;
-  }
-  33% {
-    transform: translateY(-10px) rotate(120deg);
-    opacity: 0.8;
-  }
-  66% {
-    transform: translateY(5px) rotate(240deg);
-    opacity: 0.6;
-  }
-}
-
-/* Screen Transition Effects */
-@keyframes screenWipeLeft {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes screenWipeRight {
-  0% {
-    clip-path: inset(0 0 0 100%);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes screenWipeUp {
-  0% {
-    clip-path: inset(100% 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes screenWipeDown {
-  0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-/* Hologram Effect */
-@keyframes hologram {
-  0%, 100% {
-    opacity: 1;
-    filter: hue-rotate(0deg);
-  }
-  25% {
-    opacity: 0.8;
-    filter: hue-rotate(90deg);
-  }
-  50% {
-    opacity: 0.9;
-    filter: hue-rotate(180deg);
-  }
-  75% {
-    opacity: 0.7;
-    filter: hue-rotate(270deg);
-  }
-}
-
-/* Digital Noise */
-@keyframes digitalNoise {
-  0%, 100% {
-    filter: contrast(1) brightness(1);
-  }
-  25% {
-    filter: contrast(1.2) brightness(0.9);
-  }
-  50% {
-    filter: contrast(0.8) brightness(1.1);
-  }
-  75% {
-    filter: contrast(1.1) brightness(0.95);
-  }
-}
-
-/* ===== UTILITY ANIMATION CLASSES ===== */
-
-/* Entrance Animations */
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.animate-slideInRight {
-  animation: slideInRight 0.5s ease-out forwards;
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 0.5s ease-out forwards;
-}
-
-.animate-slideInUp {
-  animation: slideInUp 0.5s ease-out forwards;
-}
-
-.animate-slideInDown {
-  animation: slideInDown 0.5s ease-out forwards;
-}
-
-.animate-scaleIn {
-  animation: scaleIn 0.3s ease-out forwards;
-}
-
-/* Exit Animations */
-.animate-fadeOut {
-  animation: fadeOut 0.5s ease-out forwards;
-}
-
-.animate-scaleOut {
-  animation: scaleOut 0.3s ease-out forwards;
-}
-
-/* Continuous Animations */
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.animate-bounce {
-  animation: bounce 2s infinite;
-}
-
-.animate-shake {
-  animation: shake 0.5s ease-in-out;
-}
-
-.animate-rotate {
-  animation: rotate 2s linear infinite;
-}
-
-.animate-neonPulse {
-  animation: neonPulse 2s ease-in-out infinite;
-}
-
-.animate-hologram {
-  animation: hologram 3s ease-in-out infinite;
-}
-
-.animate-digitalNoise {
-  animation: digitalNoise 0.1s ease-in-out infinite;
-}
-
-/* Hover Animations */
-.hover-glow:hover {
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 20px currentColor);
-}
-
-.hover-scale:hover {
-  transition: transform 0.3s ease;
-  transform: scale(1.05);
-}
-
-.hover-lift:hover {
-  transition: transform 0.3s ease;
-  transform: translateY(-5px);
-}
-
-/* Delayed Animations */
-.animate-delay-1 { animation-delay: 0.1s; }
-.animate-delay-2 { animation-delay: 0.2s; }
-.animate-delay-3 { animation-delay: 0.3s; }
-.animate-delay-4 { animation-delay: 0.4s; }
-.animate-delay-5 { animation-delay: 0.5s; }
-
-/* Animation Durations */
-.animate-fast { animation-duration: 0.3s; }
-.animate-normal { animation-duration: 0.5s; }
-.animate-slow { animation-duration: 1s; }
-.animate-slower { animation-duration: 2s; }
-
-/* Screen Transition Classes */
-.transition-wipe-left {
-  animation: screenWipeLeft 0.5s ease-out forwards;
-}
-
-.transition-wipe-right {
-  animation: screenWipeRight 0.5s ease-out forwards;
-}
-
-.transition-wipe-up {
-  animation: screenWipeUp 0.5s ease-out forwards;
-}
-
-.transition-wipe-down {
-  animation: screenWipeDown 0.5s ease-out forwards;
-}
-
-/* Particle System Animations */
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--neon-cyan);
-  border-radius: 50%;
-  animation: particleFloat 6s ease-in-out infinite;
-  opacity: 0.7;
-}
-
-.particle:nth-child(2n) {
-  background: var(--neon-pink);
-  animation-delay: -2s;
-  animation-duration: 8s;
-}
-
-.particle:nth-child(3n) {
-  background: var(--neon-green);
-  animation-delay: -4s;
-  animation-duration: 10s;
-}
-
-/* Loading Spinner */
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid var(--neon-cyan);
-  border-radius: 50%;
-  animation: rotate 1s linear infinite;
-}
-
-/* Typing Effect */
-.typing-effect {
-  overflow: hidden;
-  border-right: 2px solid var(--neon-cyan);
-  white-space: nowrap;
-  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--neon-cyan); }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }

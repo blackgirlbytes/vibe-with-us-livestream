@@ -1,0 +1,297 @@
+/* Regex Game Styles */
+
+.regex-game {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0A0A0A 0%, #1a0033 50%, #0A0A0A 100%);
+}
+
+.regex-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.regex-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    color: #00FFFF;
+    margin-bottom: 1rem;
+}
+
+.regex-challenge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.challenge-description {
+    font-size: 1.2rem;
+    color: #CCCCCC;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.test-strings {
+    margin-bottom: 2rem;
+}
+
+.test-strings h4 {
+    color: #FF00FF;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', monospace;
+}
+
+.string-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.test-string {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.test-string.should-match {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00FF00;
+    color: #00FF00;
+}
+
+.test-string.should-not-match {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #FF0000;
+    color: #FF0000;
+}
+
+.test-string.matched {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.test-string.not-matched {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.regex-input-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.regex-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.regex-input {
+    font-family: monospace;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+    color: #FFFFFF;
+    min-width: 300px;
+    text-align: center;
+}
+
+.regex-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.regex-input.valid {
+    border-color: #00FF00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.regex-input.invalid {
+    border-color: #FF0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.regex-delimiters {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FF00FF;
+    font-weight: bold;
+}
+
+.validation-feedback {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    min-height: 2rem;
+}
+
+.feedback-success {
+    color: #00FF00;
+}
+
+.feedback-error {
+    color: #FF0000;
+}
+
+.feedback-partial {
+    color: #FFFF00;
+}
+
+.regex-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.regex-btn {
+    padding: 1rem 2rem;
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    background: transparent;
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.regex-btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.regex-btn.primary {
+    border-color: #FF00FF;
+    color: #FF00FF;
+}
+
+.regex-btn.primary:hover {
+    background: rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.regex-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.regex-progress {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.progress-text {
+    color: #CCCCCC;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00FFFF, #FF00FF);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.regex-hints {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.regex-hints h5 {
+    color: #FFFF00;
+    margin-bottom: 0.5rem;
+}
+
+.regex-hints ul {
+    color: #CCCCCC;
+    padding-left: 1.5rem;
+}
+
+.regex-hints li {
+    margin-bottom: 0.3rem;
+}
+
+/* Success Animation */
+.success-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #00FF00;
+    z-index: 1000;
+    animation: successPulse 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .regex-game {
+        padding: 1rem;
+    }
+    
+    .regex-title {
+        font-size: 1.5rem;
+    }
+    
+    .regex-input {
+        min-width: 250px;
+        font-size: 1.2rem;
+    }
+    
+    .regex-delimiters {
+        font-size: 1.2rem;
+    }
+    
+    .string-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .regex-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

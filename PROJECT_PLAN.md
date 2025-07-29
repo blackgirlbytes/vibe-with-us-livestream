@@ -36,31 +36,14 @@ A mind-bending progressive web game where each level is a completely different g
 ---
 
 ### 🔤 Phase 1: Regex Typing Puzzle (Level 1)
-**Duration**: 2-3 days
 **Goal**: Create an engaging regex learning game that's actually fun!
+
+- **Challenge Types**:
+  - Email validation
 
 #### Game Mechanics:
 - **Regex Challenges**: Players type regex patterns to match given strings
-- **Progressive Difficulty**: Start with simple patterns, build to complex ones
-- **Visual Feedback**: Highlight matches in real-time as you type
-- **Hint System**: Contextual hints for struggling players
-- **Time Pressure**: Optional timer mode for advanced players
 
-#### Creative Features:
-- **Story Mode**: You're a "Data Detective" solving cyber mysteries
-- **Pattern Visualization**: Visual representation of regex patterns
-- **Challenge Types**:
-  - Email validation
-  - Phone number extraction
-  - Log file parsing
-  - DNA sequence matching (why not?!)
-  - ASCII art pattern matching
-
-#### Technical Implementation:
-- Real-time regex validation
-- Syntax highlighting for regex input
-- Animated success/failure feedback
-- Progress tracking with stars/points
 
 ---
 
