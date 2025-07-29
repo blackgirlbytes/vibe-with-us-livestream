@@ -47,7 +47,11 @@ class GameStorage {
       // Merge with default data to ensure all properties exist
       return this.mergeWithDefaults(data);
     } catch (error) {
-      Utils.handleError(error, 'GameStorage.init');
+      if (window.Utils) {
+        Utils.handleError(error, 'GameStorage.init');
+      } else {
+        console.error('GameStorage.init error:', error);
+      }
       return this.defaultData;
     }
   }
@@ -77,10 +81,16 @@ class GameStorage {
     try {
       data.lastPlayed = new Date().toISOString();
       localStorage.setItem(this.storageKey, JSON.stringify(data));
-      GameEvents.emit('dataSaved', data);
+      if (window.GameEvents) {
+        GameEvents.emit('dataSaved', data);
+      }
       return true;
     } catch (error) {
-      Utils.handleError(error, 'GameStorage.saveData');
+      if (window.Utils) {
+        Utils.handleError(error, 'GameStorage.saveData');
+      } else {
+        console.error('GameStorage.saveData error:', error);
+      }
       return false;
     }
   }

@@ -80,7 +80,7 @@ class GameManager {
       console.log('🎮 Initializing Game Manager...');
       
       // Initialize storage
-      this.gameData = GameStorage.init();
+      this.gameData = window.GameStorage.init();
       
       // Set up event listeners
       this.setupEventListeners();
@@ -160,7 +160,7 @@ class GameManager {
 
   // Update progress display
   updateProgressDisplay() {
-    const progress = GameStorage.getOverallProgress();
+    const progress = window.GameStorage.getOverallProgress();
     const bestScore = this.getBestOverallScore();
     
     Utils.$('#overall-progress').textContent = progress + '%';
@@ -173,8 +173,8 @@ class GameManager {
     container.innerHTML = '';
 
     this.games.forEach(game => {
-      const isUnlocked = GameStorage.isLevelUnlocked(game.level);
-      const progress = GameStorage.getGameProgress(game.id);
+      const isUnlocked = window.GameStorage.isLevelUnlocked(game.level);
+      const progress = window.GameStorage.getGameProgress(game.id);
       
       const card = Utils.createElement('div', `level-card ${!isUnlocked ? 'locked' : ''}`);
       card.innerHTML = `
@@ -258,7 +258,7 @@ class GameManager {
 
   // Start the game (first available level)
   startGame() {
-    const currentLevel = GameStorage.getCurrentLevel();
+    const currentLevel = window.GameStorage.getCurrentLevel();
     const game = this.games.find(g => g.level === currentLevel);
     
     if (game) {
@@ -277,7 +277,7 @@ class GameManager {
       return;
     }
 
-    if (!GameStorage.isLevelUnlocked(game.level)) {
+    if (!window.GameStorage.isLevelUnlocked(game.level)) {
       Utils.showAchievement('Level Locked', 'Complete previous levels to unlock this game', '🔒');
       return;
     }
@@ -406,17 +406,17 @@ class GameManager {
     console.log('🎉 Game completed!', data);
     
     // Update progress
-    GameStorage.updateGameProgress(data.gameType, {
+    window.GameStorage.updateGameProgress(data.gameType, {
       completed: true,
       bestScore: data.score,
       level: data.level
     });
 
     // Update score
-    GameStorage.updateScore(data.gameType, data.score);
+    window.GameStorage.updateScore(data.gameType, data.score);
 
     // Check for achievements
-    GameStorage.checkMilestones();
+    window.GameStorage.checkMilestones();
 
     // Show completion message
     this.showTransition('LEVEL COMPLETE!', 'Preparing next challenge...');
@@ -441,7 +441,7 @@ class GameManager {
     
     // Update score if any
     if (data.score > 0) {
-      GameStorage.updateScore(data.gameType, data.score);
+      window.GameStorage.updateScore(data.gameType, data.score);
     }
 
     // Show failure message
@@ -481,7 +481,7 @@ class GameManager {
 
   // Show achievements screen
   showAchievements() {
-    const achievements = GameStorage.getAchievements();
+    const achievements = window.GameStorage.getAchievements();
     console.log('Achievements:', achievements);
     // TODO: Implement achievements screen
     Utils.showAchievement('Coming Soon', 'Achievements screen will be implemented soon!', '🏆');
@@ -489,7 +489,7 @@ class GameManager {
 
   // Show settings screen
   showSettings() {
-    const settings = GameStorage.getSettings();
+    const settings = window.GameStorage.getSettings();
     console.log('Settings:', settings);
     // TODO: Implement settings screen
     Utils.showAchievement('Coming Soon', 'Settings screen will be implemented soon!', '⚙️');
@@ -499,7 +499,7 @@ class GameManager {
   getBestOverallScore() {
     let totalBest = 0;
     this.games.forEach(game => {
-      totalBest += GameStorage.getBestScore(game.id);
+      totalBest += window.GameStorage.getBestScore(game.id);
     });
     return totalBest;
   }
@@ -592,3 +592,6 @@ class GameManager {
 
 // Create global game manager instance
 window.GameManager = new GameManager();
+
+// Expose the init method globally for easier access
+window.GameManager.init = window.GameManager.init.bind(window.GameManager);

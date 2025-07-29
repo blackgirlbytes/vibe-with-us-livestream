@@ -142,7 +142,12 @@
     <script>
         // Initialize the game when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            GameManager.init();
+            // GameManager is already instantiated as window.GameManager in game-manager.js
+            if (window.GameManager && window.GameManager.init) {
+                window.GameManager.init();
+            } else {
+                console.error('GameManager not found or not properly initialized');
+            }
         });
     </script>
 </body>
