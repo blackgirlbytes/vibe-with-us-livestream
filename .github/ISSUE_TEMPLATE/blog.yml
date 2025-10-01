@@ -1,0 +1,52 @@
+name: Blog submission
+description: Submit an external Hacktoberfest blog post for review and leaderboard inclusion.
+title: "Blog: <your title here>"
+labels: ["submission"]
+assignees: []
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Post URL
+      placeholder: "https://…"
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Publish date (YYYY-MM-DD)
+      placeholder: "2025-10-01"
+    validations:
+      required: true
+
+  - type: input
+    id: handle
+    attributes:
+      label: GitHub handle
+      placeholder: "your-github-username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: 1–2 sentences describing the post.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: My post is publicly accessible right now.
+          required: true
