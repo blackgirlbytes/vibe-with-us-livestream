@@ -1,0 +1,24 @@
+name: Blog submission
+title: "Blog: ${title}"
+labels: [submission]
+body:
+  - type: input
+    id: url
+    attributes: { label: Post URL, placeholder: "https://…" }
+    validations: { required: true }
+  - type: input
+    id: title
+    attributes: { label: Title }
+    validations: { required: true }
+  - type: input
+    id: date
+    attributes: { label: Publish date (YYYY-MM-DD) }
+    validations: { required: true }
+  - type: textarea
+    id: summary
+    attributes: { label: Summary }
+    validations: { required: true }
+  - type: input
+    id: handle
+    attributes: { label: GitHub handle }
+    validations: { required: true }
